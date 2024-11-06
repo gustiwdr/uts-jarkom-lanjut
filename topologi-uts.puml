@@ -1,0 +1,37 @@
+@startuml
+title Topologi Jaringan Lab Praktikum UEU
+nwdiag {
+    inet --mikrotik_KJ
+
+    network Kampus_KHI {
+        mikrotik_KHI [address = "192.168.1.0/24"];
+        PC_KHI [address = "192.168.1.254"];
+    }
+
+    network Kampus_KJ {
+        mikrotik_KJ [address = "192.168.2.0/24"];
+        PC_KJ [address = "192.168.2.254"];
+    }
+
+    network Kampus_CR {
+        mikrotik_CR [address = "192.168.3.0/24"];
+        PC_CR [address = "192.168.3.254"];
+    }
+
+    ' Koneksi antar kampus menggunakan mikrotik
+    network ether1 {
+        mikrotik_KHI [address = "30.30.30.3/24"];
+        mikrotik_KJ [address = "30.30.30.2/24"];
+    }
+
+    network ether2 {
+        mikrotik_KJ [address = "20.20.20.2/24"];
+        mikrotik_CR [address = "20.20.20.1/24"];
+    }
+
+    network ether3 {
+        mikrotik_CR [address = "10.10.10.1/24"];
+        mikrotik_KHI [address = "10.10.10.3/24"];
+    }
+}
+@enduml
