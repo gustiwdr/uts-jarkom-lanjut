@@ -138,6 +138,6 @@ Firewall adalah sistem yang berfungsi untuk mengizinkan lalu lintas jaringan yan
 
 NAT (Network Address Translation) adalah metode jaringan yang mengubah/menerjemahkan alamat IP lokal menjadi alamat IP publik, yang memungkinkan perangkat dalam jaringan internal untuk mengakses internet. NAT adalah salah satu fitur dari Firewall dan dapat digunakan untuk menghubungkan dua laptop (atau lebih) ke internet melalui satu koneksi yang disediakan oleh perangkat seperti router.
 
-# STUDY CASE
+# CASE STUDY
 
-Pada study case ini, saya melakukan konfigurasi sebagai Kampus_CR, mikrotik_CR.
+Topologi ini menghubungkan beberapa PC ke router MikroTik melalui switch yang terhubung ke port Ethernet router. Masing-masing switch menghubungkan beberapa PC di subnet yang berbeda. Konfigurasi **RIP** memastikan bahwa perangkat di semua subnet dapat saling berkomunikasi, dan **DHCP** memberikan alamat IP secara otomatis kepada perangkat yang terhubung ke jaringan lokal. Dengan konfigurasi ini, router MikroTik memungkinkan komunikasi antara perangkat di berbagai subnet dan koneksi internet melalui **ether1**, yang terhubung ke ISP.

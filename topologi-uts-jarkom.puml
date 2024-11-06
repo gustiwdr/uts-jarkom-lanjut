@@ -1,0 +1,31 @@
+@startuml
+header TOPOLOGI JARKOM
+footer Copyright@2024
+title TOPOLOGI UNTUK MASING-MASING LAB KAMPUS
+nwdiag {
+    inet --router
+
+    network ether1 {
+        color = "lightblue"
+        router [address = "internet"];
+    }
+
+    network ether2 {
+        router [address = "192.168.99.1/29"];
+        switch_1
+        switch_1 -- PC_1
+    }
+
+    network ether3 {
+        router [address = "192.168.77.1/28"];
+        switch_2
+        switch_2 -- PC_2
+    }
+
+    network ether4 {
+        router [address = "192.168.66.1/32"];
+        switch_3
+        switch_3 -- PC_3
+    }
+}
+@enduml
